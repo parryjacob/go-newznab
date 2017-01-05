@@ -120,6 +120,7 @@ func (c Client) splitCats(cats []int) []string {
 }
 func (c Client) search(vals url.Values) ([]NZB, error) {
 	vals.Set("apikey", c.apikey)
+	vals.Set("extended", "1")
 	//vals.Set("t", "tvsearch")
 	var nzbs []NZB
 	log.Debug("newznab:Client:Search: searching")
